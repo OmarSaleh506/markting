@@ -18,46 +18,9 @@ export const fetchData = () => {
                 "messages": [
                     {
                         "role": "user",
-                        "content": "كيفك"
+                        "content": "Hello!"
                     }
                 ]
             }
     })
 }
-// export const fetchData = (input:string) => {
-//     return makeRequest({
-//         url:'https://fakestoreapi.com/carts',
-//         method: HttpMethods.GET,
-//         data: JSON.stringify(
-//             {
-//                 userId:`${input}`,
-//                 date:2020-2-3,
-//                 products:[{productId:5,quantity:1},{productId:1,quantity:5}]
-//             }
-//         )
-//     })
-// }
-
-//https://api.instantwebtools.net/v1/airlines
-
-// {
-//     "Content-Type" : "text/plain"
-// },
-// {
-//     "Content-Length" : "<calculated when request is sent>"
-// },
-// {
-//     "Host": "<calculated when request is sent>"
-// },
-// {
-//     "User-Agent" : "PostmanRuntime/7.31.3"
-// },
-// {
-//     "Accept": "*/*"
-// },
-// {
-//     "Accept-Encoding": "gzip, deflate, br"
-// },
-// {
-//     "Connection": "keep-alive"
-// },
