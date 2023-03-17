@@ -3,6 +3,7 @@ import axios from "axios";
 // Set config defaults when creating the instance
 const axiosObject = axios.create({
   headers: {
+
     "Content-Type": "application/json",  
       "customer-id": "3395462520",
       "x-api-key": "zqt_ymKleI-dxJYkdCrdQk592Mjg8kD3UwVHS8ZWMw"
