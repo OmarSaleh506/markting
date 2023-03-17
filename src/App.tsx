@@ -1,26 +1,32 @@
-import { useTranslation } from "react-i18next";
-
+import { useState } from "react";
+import { fetchData } from "./services/api";
 
 function App() {
+  const [input, setInput] = useState("");
+  const [completedSentence, setCompletedSentence] = useState("");
 
-  const {t} = useTranslation();
+  async function handleClick() {
+    try {
+      const completedSentence = await fetchData();
+      console.log(completedSentence);
+      setCompletedSentence(completedSentence);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
-    <div className="App">
-      <header className="flex items-center flex-col gap-5">
-        <img src={"assets/images/logo.png"} className="App-logo" alt="logo" />
-        <h1 className="text-3xl font-bold text-red-500 underline">
-          {t('app.name')}
-        </h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex flex-col justify-center h-[100vh]">
+      <div className="flex flex-col justify-center items-center gap-4">
+        <textarea className="w-[500px] h-[300px] bg-slate-500"
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
+          rows={5}
+          placeholder="Type in some words and I'll finish the rest..."
+        />
+        <button className="bg-slate-500 w-[120px] h-auto py-2" onClick={() => handleClick()}>Complete Sentence</button>
+        {completedSentence && <p className="text-black bg-slate-500">Completed sentence: {completedSentence}</p>}
+      </div>
     </div>
   );
 }
