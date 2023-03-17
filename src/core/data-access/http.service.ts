@@ -6,6 +6,7 @@ export type MakeRequest = {
 	method: HttpMethods;
 	data?: Object | undefined;
 	params?: Object | undefined;
+	headers?:Object | undefined
 };
 
 export const makeRequest = async (req: MakeRequest) => {
