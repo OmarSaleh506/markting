@@ -23,7 +23,7 @@ export const fetchImage = (input:string,input2:string) => {
         url:'https://api.openai.com/v1/images/generations',
         method: HttpMethods.POST,
             data: {
-                "prompt": `create instagram  post for ${input} sourdough ${input2}`,
+                "prompt": `create instagram  post for ${input} company and its content ${input2}`,
                 "n": 1,
                 "size": "512x512"
             }
