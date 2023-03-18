@@ -63,6 +63,10 @@ class AppRoutes {
   getAdvertisementPagePath(): string {
     return `/advertisement`;
   }
+  // ContentAnswerPage
+  getContentAnswerPagePath(): string {
+    return `/content-answer`;
+  }
 }
 
 export const appRoutesObj = AppRoutes.getInstance();

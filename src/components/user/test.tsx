@@ -3,13 +3,11 @@ import { fetchData } from "src/services/api";
 function Test() {
     const [input, setInput] = useState("");
     const [completedSentence, setCompletedSentence] = useState([]);
-    // const [test,setTest]=useState('')
     async function handleClick() {
         try {
-            const completedSentence1 = await fetchData(input);
-            console.log(completedSentence1.choices[0].message.content)
-            setCompletedSentence(completedSentence1.choices[0].message.content);
-            // setTest(completedSentence1.choices[0].message.content)
+            // const completedSentence1 = await fetchData(input);
+            // console.log(completedSentence1.choices[0].message.content)
+            // setCompletedSentence(completedSentence1.choices[0].message.content);
         } catch (error) {
             console.error(error);
         }

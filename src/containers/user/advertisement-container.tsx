@@ -1,7 +1,9 @@
+import AdvertisementComponent from "src/components/user/advertisement-component";
+
 function AdvertisementContainer() {
     return (
         <div>
-            AdvertisementContainer
+            <AdvertisementComponent />
         </div>
     );
 }

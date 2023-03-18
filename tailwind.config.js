@@ -24,8 +24,12 @@ module.exports = {
         A2: "url('/public/assets/images/مطاعم.png')",
         A3: "url('/public/assets/images/شركات.png')",
         A4: "url('/public/assets/images/مدارس.png')",
-        A5: "url('/public/assets/images/مطاعم.png')",
+        A5: "url('/public/assets/images/متاجر.png')",
         A6: "url('/public/assets/images/اخرى.png')",
+      },
+      animation: {
+        bounce200: "bounce 1s infinite 200ms",
+        bounce400: "bounce 1s infinite 400ms",
       },
     },
   },

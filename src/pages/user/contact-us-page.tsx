@@ -1,10 +1,10 @@
 import { Layout } from "src/components/common/layout";
-import ContactUsContainer from "src/containers/user/contact-us-container";
+import ContactUsContainer from "src/containers/user/content-container";
 
 function ContactUs() {
     return (
         <Layout>
-            <ContactUsContainer />
+            <div>ContactUs</div>
         </Layout>
     );
 }

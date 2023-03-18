@@ -9,6 +9,7 @@ const ContactUsPage = React.lazy(() => import('./pages/user/contact-us-page'));
 const AboutUsPage = React.lazy(() => import('./pages/user/about-us-page'));
 const ContentPage = React.lazy(() => import('./pages/user/content-page'));
 const AdvertisementPage = React.lazy(() => import('./pages/user/advertisement-page'));
+const ContentAnswerPage = React.lazy(() => import('./pages/user/content-answer-page'));
 
 
 const withSuspense = (WrappedComponent: JSX.Element) => {
@@ -72,6 +73,11 @@ export function AppRouting() {
             element={withSuspense(<AdvertisementPage />)}
           />
 
+          <Route
+            key="ContentAnswerPage"
+            path={appRoutesObj.getContentAnswerPagePath()}
+            element={withSuspense(<ContentAnswerPage />)}
+          />
         </Routes>
       </BrowserRouter>
     </Suspense>

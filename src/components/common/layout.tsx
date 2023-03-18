@@ -7,9 +7,9 @@ interface LayoutProps {
 }
 export function Layout({ children }: LayoutProps) {
     return (
-        <div className="min-h-screen">
+        <>
             <NaveBar />
             {children}
-        </div>
+        </>
     );
 }

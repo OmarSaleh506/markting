@@ -1,19 +1,16 @@
-function RadioButton() {
+interface IProps {
+    text: string;
+    value: string | number | readonly string[] | undefined;
+    fun?: React.ChangeEventHandler<HTMLInputElement>;
+}
+function RadioButton(props: IProps) {
     return (
-        <fieldset className="flex items-center gap-5 pt-5">
-            <div className="flex items-center ">
-                <input id="country-option-1" type="radio" name="countries" value="USA" className="h-5 w-5 border-gray-300 focus:ring-2 focus:ring-blue-300 " aria-labelledby="country-option-1" aria-describedby="country-option-1" />
-                <label htmlFor="country-option-1" className="text-xl font-medium text-gray-900 px-2 block">
-                    اعلان
-                </label>
-            </div>
-            <div className="flex items-center">
-                <input id="country-option-1" type="radio" name="countries" value="USA" className="h-5 w-5 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-1" aria-describedby="country-option-1" />
-                <label htmlFor="country-option-1" className="text-xl font-medium text-gray-900 px-2 block">
-                    محتوى
-                </label>
-            </div>
-        </fieldset>
+        <div className="flex items-center ">
+            <input onChange={props.fun} id="option-1" type="radio" name="countries" value={props.value} className="h-5 w-5 border-gray-300 focus:ring-2 focus:ring-blue-300 " aria-labelledby="option-1" aria-describedby="option-1" />
+            <label htmlFor="option-1" className="text-xl font-medium text-gray-900 px-2 block">
+                {props.text}
+            </label>
+        </div>
     );
 }
 

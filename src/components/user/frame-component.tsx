@@ -1,58 +1,107 @@
-function Frame() {
-    return (
-        <GridComponent />
-    );
-}
-
-export default Frame;
+import { useState } from "react";
+import { VscClose } from "react-icons/vsc";
+import { useNavigate } from "react-router-dom";
+import { appRoutesObj } from "src/app.paths";
 interface IText {
     text: string;
     image: string;
 }
+function Frame() {
+    const contentPage: string = appRoutesObj.getContentPagePath();
+    const advertisementPage: string = appRoutesObj.getAdvertisementPagePath();
+    const [showModal, setShowModal] = useState(false);
+    const navigate = useNavigate();
+    function handelClick(route: string) {
+        navigate(route)
+        setShowModal(false)
+    }
+    const FrameContent: IText[] = [
+        {
+            text: 'عيادات',
+            image: 'bg-A1',
+        },
+        {
+            text: 'مطاعم',
+            image: 'bg-A2',
+        },
+        {
+            text: 'شركات',
+            image: 'bg-A3',
+        },
+        {
+            text: 'مدارس',
+            image: 'bg-A4',
+        },
+        {
+            text: 'متاجر',
+            image: 'bg-A5',
+        },
+        {
+            text: 'اخرى',
+            image: 'bg-A6',
+        },
 
-const FrameContent: IText[] = [
-    {
-        text: 'عيادات',
-        image: 'bg-A1',
-
-    },
-    {
-        text: 'مطاعم',
-        image: 'bg-A2',
-
-    },
-    {
-        text: 'شركات',
-        image: 'bg-A3',
-
-    },
-    {
-        text: 'مدارس',
-        image: 'bg-A4',
-
-    },
-    {
-        text: 'مطاعم',
-        image: 'bg-A5',
-
-    },
-    {
-        text: 'اخرى',
-        image: 'bg-A6',
-
-    },
-]
-
-function GridComponent() {
+    ]
     return (
-        <div className="grid grid-cols-3 gap-10 pt-20 sm:flex sm:flex-col">
-            {
-                FrameContent.map((item, index) => <div key={index} className={`${item.image} w-[352px] h-[180px] lg:w-[300px] lg:h-[160px] md:w-[250px] md:h-[130px] bg-cover bg-no-repeat flex items-center justify-center rounded-xl`}>
-                    <p className="text-white text-[32px]">
-                        {item.text}
-                    </p>
-                </div>)
-            }
-        </div>
+        <div className="flex flex-col">
+            {showModal ? (
+                <>
+                    <div
+                        className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                    >
+                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                            {/*content*/}
+                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gradient-to-r  from-[#313860] to-[#151928] outline-none focus:outline-none">
+                                {/*header*/}
+                                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                    <button
+                                        className="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                        onClick={() => setShowModal(false)}
+                                    >
+                                        <VscClose className='text-[30px] text-white' />
+                                    </button>
+                                    <h3 className="text-3xl font-semibold text-white">
+                                        اختر نوع التسويق
+                                    </h3>
+                                </div>
+                                <div className="flex items-center  justify-between p-6 border-t border-solid border-slate-200 rounded-b">
+                                    <button
+                                        className="bg-[#f66700d5] text-white active:bg-[#f66700] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={() => handelClick(advertisementPage)}
+                                    >
+                                        أعلان
+                                    </button>
+                                    <button
+                                        className="bg-[#f66700d5] text-white active:bg-[#f66700] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={() => handelClick(contentPage)}
+                                    >
+                                        محتوى
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+            ) : null}
+            <div className="grid grid-cols-3 gap-10 pt-20 sm:flex sm:flex-col">
+                {
+                    FrameContent.map((item, index) => <div onClick={() => setShowModal(true)} key={index} className={`${item.image} w-[352px] h-[180px] lg:w-[300px] lg:h-[160px] md:w-[250px] md:h-[130px] bg-cover bg-no-repeat flex items-center justify-center rounded-xl`}>
+                        <p className="text-white text-[32px]">
+                            {item.text}
+                        </p>
+                    </div>)
+                }
+            </div>
+        </div >
     );
 }
+
+export default Frame;
+
+
+
+
+

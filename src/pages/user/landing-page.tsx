@@ -1,5 +1,4 @@
 import { Layout } from "src/components/common/layout";
-import Test from "src/components/user/test";
 import LandingPageContainer from "src/containers/user/landing-page-container";
 
 function LandingPage() {
@@ -7,7 +6,6 @@ function LandingPage() {
         <Layout>
             <>
                 <LandingPageContainer />
-                <Test />
             </>
         </Layout>
     );
