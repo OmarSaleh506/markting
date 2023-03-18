@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { fetchData } from "src/services/api";
 import Loader from "./loder";
 
@@ -90,7 +90,7 @@ function Content() {
                     <div className="flex flex-col  justify-center items-center ">
                         <div className="flex flex-col items-start">
                             <h1 className="text-[#F66800] min-w-max ">الصفحة الرئيسية / محتوى الصفحة /</h1>
-                            <div className="w-[1120px] mx-auto h-[556px] lg:w-[700px] lg:h-[500px] md:w-[400px] md:h-[150px] sm:w-[250px] sm:h-[300px] rounded-lg border mt-10 px-5 pt-5 text-right">
+                            <div className="w-[1120px] mx-auto h-auto py-10 lg:w-[700px]  md:w-[400px] md:h-[150px] sm:w-[250px]  rounded-lg border mt-10 px-5 pt-5 text-right">
                                 {completedSentence}
                             </div>
                         </div>
