@@ -52,7 +52,7 @@ export default axiosObject;
 export const axiosObjects = axios.create({
   headers: {
     "Content-Type": "application/json",
-    "Authorization": "Bearer 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"
+    "Authorization": "Bearer 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"
   }
 });
 
